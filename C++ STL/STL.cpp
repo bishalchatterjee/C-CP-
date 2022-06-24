@@ -2,6 +2,11 @@
 using namespace std;
 
 
+/*
+Explanation of STL
+With Usecase,T.C
+*/
+
 
 
 //Containers in C++ STL
@@ -186,7 +191,7 @@ void explainStack() { //every operation is in O(1)
 	stack<int> st;
 	st.push(1); //{1}
 	st.push(2); //{2,1}
-	st.push(3); //{3,2,1}
+	st.push(3); //{3,2,1}s
 	st.push(4); //{4,3,2,1}
 	st.push(5); //{5,4,3,2,1}
 
@@ -357,6 +362,7 @@ void explainUnorderedMap() {
 	//Unsorted(Randomised , Unsorted , Unique ) but effecient (difference is same as that of set and unordered_set)
 
 	//AVG -O(1) , //WORST - O(Log N)
+	unordered_map<int, int> umap;
 }
 
 
@@ -389,12 +395,6 @@ void explainExtra() {
 	//**sort it according to the second element if the second element is same then sort it according to the first element but in decending
 
 	sort(a, a + n, comp); //using the custom boolean comperator as defined above //{4,1},{2,1},{1,2}
-
-	int num = 7;
-	int cnt = __builtin_popcount();  //number of 1's in binary of n in __builtin_popcount(n) (ie number of set bits)
-
-	long long num = 165786578687;
-	int cnt = __builtin_popcountll();
 
 
 
@@ -435,6 +435,22 @@ void otherSTLBuiltInFunctions() {
 
 	//STL max(value1,value2)
 	cout << max(5, 7) << endl; //prints 7
+
+	//STL Popcount (Gives Count of set Bits)
+
+	int num = 7;
+	int cnt = __builtin_popcount(num);//ie 3 [7=111]  //number of 1's in binary of n in __builtin_popcount(n) (ie number of set bits)
+
+	long long num = 165786578687;
+	int cnt = __builtin_popcountll(num); //for long long type
+
+	//STL Parity(n)
+	int num = 7;
+	int cnt = __builtin_parity(nums); // 7[111=count of 1's is odd-->parity is 1]
+
+	//STL CLZ (Count Leading 0's in Binary)
+	int nums = 16;
+	int cnt = __builtin_clz(nums); // ie 27 [16 --> 00000000 00000000 00000000 00010000   , there are 27 leading 0's]
 
 
 	//STL swap(value1, value2)
